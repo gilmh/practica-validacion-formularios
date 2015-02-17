@@ -14,6 +14,23 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <!--<script>
+        $(document).ready(function(){
+            $("#formulario").validate({
+                rules: {
+                    nombre: {
+                        required: true, 
+                        lettersonly: true
+                    },
+                },
+                messages: {
+                    nombre: {
+                        lettersonly: "Introduce caracteres"
+                    }
+                }
+            });
+        });
+    </script>-->
   </head>
   <body>
 <!--
@@ -22,34 +39,133 @@
       <p>Aquí debería ir el enlace a <a href="https://github.com/gilmh/practica-validacion-formularios">tu respositorio en GitHub</a>, donde estará la versión de desarrollo.</p>
     </div>
 -->
-    <form id="formulario" novalidate action="accion.php" method="post">
+    <form id="formulario" name="formulario" action="" method="post">
         <div>
-            <label for="nombre">Nombre:
-                <span class="important">*</span>
-            </label>
-            <input type="text" id="nombre" name="nombre" class="required" minlength="2" />
+            <!-- Información de Contacto: -->
+            <div>
+                <label for="nombre">Nombre:
+                    <span class="important">*</span>
+                </label>
+                <input type="text" id="nombre" name="nombre" class="required" minlength="2" />
+            </div>
+            <div>
+                <label for="apellidos">Apellidos:
+                    <span class="important">*</span>
+                </label>
+                <input type="text" id="apellidos" name="apellidos" class="required" minlength="2" />
+            </div>
+            <div>
+                <label for="telefono">Teléfono:
+                    <span class="important">*</span>
+                </label>
+                <input type="text" id="telefono" name="telefono" class="required" minlength="2" />
+            </div>
+            <div>
+                <label for="email">E-mail:
+                    <span class="important">*</span>
+                </label>
+                <input type="email" id="email" name="email" class="email required"/>
+            </div>
+            <div>
+                <label for="repEmail">Repetir E-mail:</label>
+                <input type="email" id="repEmail" name="repEmail" class="email required"/>
+            </div>
+            <div>
+                <label for="url">¿Cómo nos has conocido?</label>
+                <!-- Rellenar radio buton -->
+            </div>            
         </div>
-         
+        
+        <!-- Datos de facturación: -->
         <div>
-            <label for="email">E-mail:
-                <span class="important">*</span>
-            </label>
-            <input type="email" id="email" name="email" class="email required"/>
+            <div>
+                <label for="demandante">Demandante:
+                    <span class="important">*</span>
+                </label>
+                <input type="text" id="demandante" name="demandante" class="required" minlength="2" />
+            </div>
+            <div>
+                <label for="cifnif">CIF/NIF:
+                    <span class="important">*</span>
+                </label>
+                <input type="text" id="cifnif" name="cifnif" class="required" minlength="2" />
+            </div>
+            <div>
+                <label for="nomEmp">Nombre/Empresa:
+                    <span class="important">*</span>
+                </label>
+                <input type="text" id="nomEmp" name="nomEmp" class="required" minlength="2" />
+            </div>
+            <div>
+                <label for="direccion">Dirección:
+                    <span class="important">*</span>
+                </label>
+                <input type="text" id="direccion" name="direccion" class="required" minlength="2" />
+            </div>
+            <div>
+                <label for="cp">Codigo Postal:
+                    <span class="important">*</span>
+                </label>
+                <input type="text" id="cp" name="cp" class="required" minlength="2" />
+            </div>
+            <div>
+                <label for="localidad">Localidad:
+                    <span class="important">*</span>
+                </label>
+                <input type="text" id="localidad" name="localidad" class="required" minlength="2" />
+            </div>
+            <div>
+                <label for="provincia">Provincia:
+                    <span class="important">*</span>
+                </label>
+                <input type="text" id="provincia" name="provincia" class="required" minlength="2" />
+            </div>
+            <div>
+                <label for="pais">País:
+                    <span class="important">*</span>
+                </label>
+                <input type="text" id="pais" name="pais" class="required" minlength="2" />
+            </div>
+            <div>
+                <label for="iban">Codigo IBAN:
+                    <span class="important">*</span>
+                </label>
+                <input type="text" id="iban" name="iban" class="required" minlength="2" />
+            </div>
+            <div>
+                <label for="pago">Forma de pago:
+                    <span class="important">*</span>
+                </label>
+                <input type="text" id="pago" name="pago" class="required" minlength="2" />
+            </div>
         </div>
-         
+
+        <!-- Datos de acceso: -->
         <div>
-            <label for="url">Url:</label>
-            <input type="url" id="url" name="url" class="url" />
+            <div>
+                <label for="usuario">Usuario:
+                    <span class="important">*</span>
+                </label>
+                <input type="text" id="usuario" name="usuario" class="required" minlength="2" />
+            </div>
+            <div>
+                <label for="pass">Contraseña:
+                    <span class="important">*</span>
+                </label>
+                <input type="text" id="pass" name="pass" class="required" minlength="2" />
+            </div>
+            <div>
+                <label for="reppass">Repetir Contraseña:
+                    <span class="important">*</span>
+                </label>
+                <input type="text" id="reppass" name="reppass" class="required" minlength="2" />
+            </div>
         </div>
-         
-        <div>
-            <label for="comentarios">Comentarios:</label>
-            <textarea id="comentarios" name="comentarios" class="required"></textarea>
-        </div>
-         
+        
         <div>
             <input type="submit" value="Enviar" />
         </div>
+
     </form>
 
 
