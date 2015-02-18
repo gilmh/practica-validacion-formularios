@@ -14,23 +14,6 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    <!--<script>
-        $(document).ready(function(){
-            $("#formulario").validate({
-                rules: {
-                    nombre: {
-                        required: true, 
-                        lettersonly: true
-                    },
-                },
-                messages: {
-                    nombre: {
-                        lettersonly: "Introduce caracteres"
-                    }
-                }
-            });
-        });
-    </script>-->
   </head>
   <body>
 <!--
@@ -46,13 +29,13 @@
                 <label for="nombre">Nombre:
                     <span class="important">*</span>
                 </label>
-                <input type="text" id="nombre" name="nombre" class="required" minlength="2" />
+                <input type="text" id="nombre" name="nombre" />
             </div>
             <div>
                 <label for="apellidos">Apellidos:
                     <span class="important">*</span>
                 </label>
-                <input type="text" id="apellidos" name="apellidos" class="required" minlength="2" />
+                <input type="text" id="apellidos" name="apellidos" class="required" minlength="4" />
             </div>
             <div>
                 <label for="telefono">Teléfono:
