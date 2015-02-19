@@ -28,8 +28,20 @@ body {
   padding: 0.2em 0;
 }
 
-.important{color:red; font-weight:bold;}
+.important{
+  color:red; 
+  font-weight:bold;
+}
 
-label{display:inline-block; width:200px;}
+label.error{
+  color:red; 
+}
 
-input[type="submit"]{margin-left:200px;}
+label{
+  display:inline-block; 
+  width:200px;
+}
+
+input[type="submit"]{
+  margin-left:200px;
+}

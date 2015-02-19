@@ -26,6 +26,7 @@
         <div>
             <!-- Información de Contacto: -->
             <div>
+                <h1>Información de Contacto</h1>
                 <label for="nombre">Nombre:
                     <span class="important">*</span>
                 </label>
@@ -35,113 +36,132 @@
                 <label for="apellidos">Apellidos:
                     <span class="important">*</span>
                 </label>
-                <input type="text" id="apellidos" name="apellidos" class="required" minlength="4" />
+                <input type="text" id="apellidos" name="apellidos" />
             </div>
             <div>
                 <label for="telefono">Teléfono:
                     <span class="important">*</span>
                 </label>
-                <input type="text" id="telefono" name="telefono" class="required" minlength="2" />
+                <input type="text" id="telefono" name="telefono" />
             </div>
             <div>
                 <label for="email">E-mail:
                     <span class="important">*</span>
                 </label>
-                <input type="email" id="email" name="email" class="email required"/>
+                <input type="email" id="email" name="email" />
             </div>
             <div>
                 <label for="repEmail">Repetir E-mail:</label>
-                <input type="email" id="repEmail" name="repEmail" class="email required"/>
+                <input type="email" id="repEmail" name="repEmail" />
             </div>
             <div>
-                <label for="url">¿Cómo nos has conocido?</label>
-                <!-- Rellenar radio buton -->
+                <label for="preg">¿Cómo nos has conocido?</label>
+                <div class="radioCheck">
+                    <label for="preg1"><input type="radio" name="title" value="1" id="preg1" />Prefiero no contestar</label>
+                    <label for="preg2"><input type="radio" name="title" value="2" id="preg2" />Publicidad</label>
+                    <label for="preg3"><input type="radio" name="title" value="3" id="preg3" />Profesionales del sector</label>
+                    <label for="preg4"><input type="radio" name="title" value="4" id="preg4" />Internet</label>
+                    <label for="preg5"><input type="radio" name="title" value="5" id="preg5" />A través de un conocido</label>
+                </div>
             </div>            
         </div>
-        
+
+        <br/>
+
         <!-- Datos de facturación: -->
         <div>
+            <h1>Datos de facturación</h1>
             <div>
-                <label for="demandante">Demandante:
+                <label for="deman">Demandante:
                     <span class="important">*</span>
                 </label>
-                <input type="text" id="demandante" name="demandante" class="required" minlength="2" />
+                <div class="radioCheck" name="deman" id="deman">
+                    <label for="deman1"><input type="radio" name="title" value="1" id="deman1" />Particular</label>
+                    <label for="deman2"><input type="radio" name="title" value="2" id="deman2" />Empresa</label>
+                </div>
             </div>
             <div>
                 <label for="cifnif">CIF/NIF:
                     <span class="important">*</span>
                 </label>
-                <input type="text" id="cifnif" name="cifnif" class="required" minlength="2" />
+                <input type="text" id="cifnif" name="cifnif" />
             </div>
             <div>
                 <label for="nomEmp">Nombre/Empresa:
                     <span class="important">*</span>
                 </label>
-                <input type="text" id="nomEmp" name="nomEmp" class="required" minlength="2" />
+                <input type="text" id="nomEmp" name="nomEmp" />
             </div>
             <div>
                 <label for="direccion">Dirección:
                     <span class="important">*</span>
                 </label>
-                <input type="text" id="direccion" name="direccion" class="required" minlength="2" />
+                <input type="text" id="direccion" name="direccion" />
             </div>
             <div>
                 <label for="cp">Codigo Postal:
                     <span class="important">*</span>
                 </label>
-                <input type="text" id="cp" name="cp" class="required" minlength="2" />
+                <input type="text" id="cp" name="cp" />
             </div>
             <div>
                 <label for="localidad">Localidad:
                     <span class="important">*</span>
                 </label>
-                <input type="text" id="localidad" name="localidad" class="required" minlength="2" />
+                <input type="text" id="localidad" name="localidad" />
             </div>
             <div>
                 <label for="provincia">Provincia:
                     <span class="important">*</span>
                 </label>
-                <input type="text" id="provincia" name="provincia" class="required" minlength="2" />
+                <input type="text" id="provincia" name="provincia" />
             </div>
             <div>
                 <label for="pais">País:
                     <span class="important">*</span>
                 </label>
-                <input type="text" id="pais" name="pais" class="required" minlength="2" />
+                <input type="text" id="pais" name="pais" />
             </div>
             <div>
                 <label for="iban">Codigo IBAN:
                     <span class="important">*</span>
                 </label>
-                <input type="text" id="iban" name="iban" class="required" minlength="2" />
+                <input type="text" id="iban" name="iban" />
             </div>
             <div>
                 <label for="pago">Forma de pago:
                     <span class="important">*</span>
                 </label>
-                <input type="text" id="pago" name="pago" class="required" minlength="2" />
+                <div class="radioCheck" name="pago" id="pago">
+                    <label for="pago1"><input type="radio" name="title" value="1" id="pago1" />Mensual</label>
+                    <label for="pago2"><input type="radio" name="title" value="2" id="pago2" />Trimestral</label>
+                    <label for="pago3"><input type="radio" name="title" value="3" id="pago3" />Anual</label>
+                </div>
             </div>
         </div>
 
+        <br/>
+
         <!-- Datos de acceso: -->
         <div>
+            <h1>Datos de acceso</h1>
             <div>
                 <label for="usuario">Usuario:
                     <span class="important">*</span>
                 </label>
-                <input type="text" id="usuario" name="usuario" class="required" minlength="2" />
+                <input type="text" id="usuario" name="usuario" />
             </div>
             <div>
                 <label for="pass">Contraseña:
                     <span class="important">*</span>
                 </label>
-                <input type="text" id="pass" name="pass" class="required" minlength="2" />
+                <input type="text" id="pass" name="pass" />
             </div>
             <div>
                 <label for="reppass">Repetir Contraseña:
                     <span class="important">*</span>
                 </label>
-                <input type="text" id="reppass" name="reppass" class="required" minlength="2" />
+                <input type="text" id="reppass" name="reppass" />
             </div>
         </div>
         
