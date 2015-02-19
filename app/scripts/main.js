@@ -21,6 +21,10 @@ $(document).ready(function(){
             	required: true,
             	email: true
             }, 
+            repEmail: {
+        		required: true,
+        		equalTo: email
+        	},
             demandante: {
             	required: true
             },
@@ -38,10 +42,10 @@ $(document).ready(function(){
             }, 
             localidad: {
             	required: true
-            }, 
+            }, /*
             provincia: {
             	required: true
-            },
+            },*/
 			pais: {
 				required: true
 			}, 
@@ -52,10 +56,15 @@ $(document).ready(function(){
 				required: true
 			}, 
 			usuario: {
-				required: true
+				required: true, 
+				minlength: 4
 			}, 
 			pass: {
 				required: true
+			},
+			reppass: {
+				required: true,
+				equalTo: pass
 			}
         },
         messages: {
@@ -74,6 +83,11 @@ $(document).ready(function(){
         		required: "El e-mail es necesario", 
         		email: "Debes introducir un correo valido"
         	}, 
+        	repEmail: {
+        		required: "Es necesario repetir el e-mail", 
+        		email: "Debes introducir un correo valido", 
+        		equalTo: "Debes introducir el mismo e-mail"
+        	},
         	demandante: {
         		required: "El demandante es necesario"
         	},
@@ -91,10 +105,10 @@ $(document).ready(function(){
         	}, 
         	localidad: {
         		required: "La localidad es necesaria"
-        	}, 
+        	}, /*
         	provincia: {
         		required: "La provincia es necesaria"
-        	}, 
+        	}, */
         	pais: {
         		required: "El pais es necesario"
         	}, 
@@ -109,9 +123,34 @@ $(document).ready(function(){
         	}, 
         	pass: {
         		required: "La contraseña es necesaria"
-        	}
+        	},
+        	reppass: {
+        		required: "Es necesario repetir la contraseña", 
+        		equalTo: "Debes introducir la mismo contraseña"
+        	},
         }
     });
+});
+
+$("#cp").focusout(function() {
+    var caracteres = $("#cp").val();
+    var ceros = "";
+    if (caracteres.length < 5){
+    	for (var i = caracteres.length; i < 5; i++) {
+    		ceros += "0";
+    	};
+    }
+    $("#cp").val(ceros + caracteres);
+});
+
+$("#cp").change(function() {
+    if ($(this).val() != "") {
+        var dato = $(this).val();
+        if (dato.length > 2) {
+            dato = dato.substring(0, 2);
+        }
+        $("#provincia").val(dato);
+    }
 });
 
 $.validator.addMethod("soloLetras", function(value, element) {
