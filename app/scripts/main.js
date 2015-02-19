@@ -130,6 +130,13 @@ $(document).ready(function(){
         	},
         }
     });
+
+	$(function () {
+		$("#pass").complexify({}, function (valid, complexity) {
+		    document.getElementById("passBarra").value = complexity;
+		});
+	});
+
 });
 
 $("#cp").focusout(function() {
