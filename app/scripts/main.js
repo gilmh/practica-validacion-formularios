@@ -50,7 +50,8 @@ $(document).ready(function(){
 				required: true
 			}, 
 			iban: {
-				required: true
+				required: true, 
+				calcularIban: true
 			}, 
 			pago: {
 				required: true
@@ -113,7 +114,7 @@ $(document).ready(function(){
         		required: "El pais es necesario"
         	}, 
         	iban: {
-        		required: "El iban es necesario"
+        		required: "El iban es necesario", 
         	}, 
         	pago: {
         		required: "La forma de pago es necesaria"
@@ -171,3 +172,7 @@ $.validator.addMethod("soloDigitos", function(value, element){
 $.validator.addMethod("telefonos", function(value, element){
 	return this.optional(element) || /^[0-9]{9}$/.test(value);
 }, "Introduce un telefono valido");
+
+$.validator.addMethod("calcularIban", function(value, element){
+	return this.optional(element) || /^[A-Z]{2}[0-9]{2}[ ][0-9]{4}[ ][0-9]{4}[ ][0-9]{2}[ ][0-9]{10}/.test(value);
+}, "Introduce un codigo IBAN correcto");
