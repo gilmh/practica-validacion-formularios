@@ -18,7 +18,8 @@ $(document).ready(function(){
             }, 
             email: {
             	required: true,
-            	email: true
+            	email: true, 
+            	remote: "php/validar_email_db.php"
             }, 
             repEmail: {
         		required: true,
@@ -139,6 +140,20 @@ $(document).ready(function(){
 	        $("#provincia").val(dato);
 	    }
 	});
+
+	$("#deman1").change(function(evento) {
+        if ($("#deman1").is(':checked')) {
+            $("#cifnif").val("NIF: ");
+            $("#apellidos").attr('disabled', false);
+        }
+    });
+
+    $("#deman2").change(function(evento) {
+    	if ($("#deman2").is(':checked')) {
+    		$("#cifnif").val("CIF: ");
+    		$("#apellidos").attr('disabled', true);
+    	}
+    });
 
 	$.validator.addMethod("soloLetras", function(value, element) {
 		return this.optional(element) || /^[a-z]+$/i.test(value);
