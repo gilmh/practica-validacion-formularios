@@ -1,10 +1,12 @@
 <?php
+header('content-type: application/json; charset=utf-8');
+header("access-control-allow-origin: *");
 /* Descomentaríamos la siguiente línea para mostrar errores de php en el fichero: */
 //ini_set('display_errors', '1');
 /* Definimos los parámetros de conexión con la bbdd: */
-$dbinfo = "mysql:dbname=xxxx;host=localhost";
-$user = "yyyyy";
-$pass = "zzzzz";
+$dbinfo = "mysql:dbname=hectorgil_equipo;host=localhost";
+$user = "hectorgil_hector";
+$pass = "hector";
 //Nos intentamos conectar:
 try {
     /* conectamos con bbdd e inicializamos conexión como UTF8 */
@@ -15,11 +17,11 @@ try {
 }
 /* Para hacer debug cargaríamos a mano el parámetro, descomentaríamos la siguiente línea: */
 //$_REQUEST['nif'] = "73003600A";
-if (isset($_REQUEST['documentNumber'])) {
+if (isset($_REQUEST['cifnif'])) {
     /* La línea siguiente la podemos descomentar para ver desde firebug-xhr si se pasa bien el parámetro desde el formulario */
     //echo $_REQUEST['nif'];
-    $nif = $_REQUEST['documentNumber'];
-    $sql = $db->prepare("SELECT * FROM usuarios WHERE nif=?");
+    $nif = $_REQUEST['cifnif'];
+    $sql = $db->prepare("SELECT * FROM registro WHERE nif=?");
     $sql->bindParam(1, $nif, PDO::PARAM_STR);
     $sql->execute();
     /* Ojo... PDOStatement::rowCount() devuelve el número de filas afectadas por la última sentencia DELETE, INSERT, o UPDATE 

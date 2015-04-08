@@ -1,7 +1,7 @@
 body {
-  background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
+  font: 13px/1.6 Tahoma, sans-serif;
+  background: #C0C0C0;
 }
 
 .hero-unit {
@@ -42,6 +42,30 @@ label{
   width:200px;
 }
 
-input[type="submit"]{
-  margin-left:200px;
+#contenido {
+  background: #FFF;
+  border: 1px solid silver;
+  margin: 1em auto;
+  padding: 1em;
+  width: 50%;
+}
+
+.articulo {
+  clear: both;
+  margin: 0;
+  padding: 20px;
+  background: #F0F0F0;
+  border-radius: 50px;
+}
+
+.boton {
+  margin: 0;
+  clear: both;
+  display: block;
+  text-align: center;
+}
+
+.componente {
+  margin: 1em auto;
+  width: 90%;
 }

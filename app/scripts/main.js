@@ -1,6 +1,20 @@
 
 $(document).ready(function(){
 	$("#formulario").validate({
+
+		submitHandler: function(form) {
+	    	
+	    	$("#enviar").click(function() {
+		    	if ($("#pago1").is(':checked')) {
+		    		alert("El pago sera de 50€");
+		    	} else if ($("#pago2").is(':checked')) {
+		    		alert("El pago sera de 140€");
+		    	} else {
+		    		alert("El pago sera de 550€");
+		    	}
+		    });
+		    form.submit();
+		}, 
         rules: {
             nombre: {
             	required: true,
@@ -26,7 +40,8 @@ $(document).ready(function(){
         		equalTo: email
         	},
             cifnif: {
-            	required: true
+            	required: true,
+            	remote: "php/validar_nif_db.php"
             }, 
             nomEmp: {
             	required: true
@@ -73,7 +88,8 @@ $(document).ready(function(){
         	}, 
         	email: {
         		required: "El e-mail es necesario", 
-        		email: "Debes introducir un correo valido"
+        		email: "Debes introducir un correo valido",
+        		remote: "El email ya existe"
         	}, 
         	repEmail: {
         		required: "Es necesario repetir el e-mail", 
@@ -81,7 +97,8 @@ $(document).ready(function(){
         		equalTo: "Debes introducir el mismo e-mail"
         	},
         	cifnif: {
-        		required: "El CIF/NIF es necesario"
+        		required: "El CIF/NIF es necesario",
+        		remote: "El nif ya existe"
         	}, 
         	nomEmp: {
         		required: "El Nombre/Empresa es necesario"
@@ -143,17 +160,29 @@ $(document).ready(function(){
 
 	$("#deman1").change(function(evento) {
         if ($("#deman1").is(':checked')) {
-            $("#cifnif").val("NIF: ");
+            $("#nif").text("NIF: ");
+            $("#cifnif").val("");
+            $("#nom").text("Nombre: ");
+            $("#nomEmp").val("");
             $("#apellidos").attr('disabled', false);
         }
     });
 
     $("#deman2").change(function(evento) {
     	if ($("#deman2").is(':checked')) {
-    		$("#cifnif").val("CIF: ");
+    		$("#nif").text("CIF: ");
+    		$("#cifnif").val("");
+    		$("#nom").text("Empresa: ");
+    		$("#nomEmp").val("");
     		$("#apellidos").attr('disabled', true);
     	}
     });
+
+    $("#email").change(function(evento) {
+        $("#usuario").val($(this).val());
+    });
+
+    
 
 	$.validator.addMethod("soloLetras", function(value, element) {
 		return this.optional(element) || /^[a-z]+$/i.test(value);
